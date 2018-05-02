@@ -6,8 +6,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="play_more_apps">https://play.google.com/store/apps/developer?id=Vishal+M+Parmar</string>
-    <string name="admob_intertestial_id">ca-app-pub-8356404931736973/5876987192</string>
-    <string name="admob_banner_id">ca-app-pub-8356404931736973/4400253997</string>
+    <string name="admob_intertestial_id">ca-app-pub-6488404587620863/2751603965</string>
+    <string name="admob_banner_id">ca-app-pub-6488404587620863/7820345233</string>
 
     <!--if you want rtl change value of isRTL to true else false-->
     <string name="isRTL">false</string>
