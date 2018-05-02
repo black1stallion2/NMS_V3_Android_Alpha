@@ -124,7 +124,7 @@ public class FragmentDownloads extends Fragment {
                 if (byte_image != null) {
                     songImage = BitmapFactory.decodeByteArray(byte_image, 0, byte_image.length);
                 } else {
-                    songImage = BitmapFactory.decodeResource(getActivity().getResources(), R.mipmap.app_icon);
+                    songImage = BitmapFactory.decodeResource(getActivity().getResources(), R.mipmap.main_logo);
                 }
 
                 ItemSong itemSong = new ItemSong(String.valueOf(i), artist, url, songImage, title, duration);

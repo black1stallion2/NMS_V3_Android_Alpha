@@ -332,7 +332,7 @@ public class FragmentHome extends Fragment {
 
             Picasso.with(getActivity())
                     .load(arrayList.get(position).getImageBig())
-                    .placeholder(R.mipmap.app_icon)
+                    .placeholder(R.mipmap.main_logo)
                     .into(imageView, new Callback() {
                         @Override
                         public void onSuccess() {

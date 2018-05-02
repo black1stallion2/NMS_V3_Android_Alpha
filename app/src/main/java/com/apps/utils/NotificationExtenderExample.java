@@ -105,7 +105,7 @@ public class NotificationExtenderExample extends NotificationExtenderService {
 			return R.drawable.notification;
 
 		} else {
-			return R.mipmap.app_icon;
+			return R.mipmap.main_logo;
 		}
 	}
 

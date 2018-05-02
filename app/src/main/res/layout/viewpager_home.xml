@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:scaleType="centerCrop"
-        android:src="@mipmap/app_icon"
+        android:src="@mipmap/main_logo"
         app:siRadius="6dp"/>
 
     <View

@@ -427,8 +427,8 @@ public class PlayerService extends IntentService {
         bigViews.setTextViewText(R.id.textView_noti_artist, Constant.arrayList_play.get(Constant.playPos).getArtist());
         smallViews.setTextViewText(R.id.status_bar_artist_name, Constant.arrayList_play.get(Constant.playPos).getArtist());
 
-        bigViews.setImageViewResource(R.id.imageView_noti, R.mipmap.app_icon);
-        smallViews.setImageViewResource(R.id.status_bar_album_art, R.mipmap.app_icon);
+        bigViews.setImageViewResource(R.id.imageView_noti, R.mipmap.main_logo);
+        smallViews.setImageViewResource(R.id.status_bar_album_art, R.mipmap.main_logo);
 
         NotificationChannel mChannel;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

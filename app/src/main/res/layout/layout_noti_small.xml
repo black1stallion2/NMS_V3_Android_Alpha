@@ -10,7 +10,7 @@
         android:id="@+id/status_bar_album_art"
         android:layout_width="@dimen/status_bar_album_art"
         android:layout_height="@dimen/status_bar_album_art"
-        android:src="@mipmap/app_icon"
+        android:src="@mipmap/main_logo"
         android:padding="5dp"
         android:gravity="center" />
 

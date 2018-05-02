@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 getString(R.string.playlist), getString(R.string.downloads), getString(R.string.favourite), getString(R.string.share_app),
                 getString(R.string.rate_app), getString(R.string.more_app), getString(R.string.menu_about), getString(R.string.privacy)};
 
-        Integer[] menu_images = {R.mipmap.home, R.mipmap.cat, R.mipmap.artist, R.mipmap.playlist, R.mipmap.nav_download, R.mipmap.heart,
+        Integer[] menu_images = {R.mipmap.home, R.mipmap.artist, R.mipmap.cat, R.mipmap.playlist, R.mipmap.nav_download, R.mipmap.heart,
                 R.mipmap.share_nav, R.mipmap.rate, R.mipmap.more, R.mipmap.about, R.mipmap.privacy};
         AdapterNavigation adapterNavigation = new AdapterNavigation(MainActivity.this, menu_names, menu_images, recyclerClickListener);
         recyclerView.setAdapter(adapterNavigation);
