@@ -78,5 +78,5 @@ public class Constant implements Serializable {
     public static String loadedSongPage = "";
     public static int rotateSpeed = 25000; //in milli seconds
     public static int adCount = 0;
-    public static int adDisplay = 4;
+    public static int adDisplay = 1;
 }
