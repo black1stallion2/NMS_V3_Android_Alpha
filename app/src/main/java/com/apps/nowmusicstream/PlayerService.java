@@ -1,4 +1,4 @@
-package com.apps.onlinemp3;
+package com.apps.nowmusicstream;
 
 import android.app.IntentService;
 import android.app.Notification;
@@ -15,7 +15,6 @@ import android.os.Build;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
 import android.telephony.TelephonyManager;
 import android.widget.RemoteViews;
 import android.widget.Toast;

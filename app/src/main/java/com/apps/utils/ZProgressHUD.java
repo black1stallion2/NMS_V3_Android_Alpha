@@ -14,7 +14,7 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.apps.onlinemp3.R;
+import com.apps.nowmusicstream.R;
 
 public class ZProgressHUD extends Dialog {
 

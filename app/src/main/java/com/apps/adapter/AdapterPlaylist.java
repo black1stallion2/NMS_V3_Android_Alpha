@@ -14,9 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.apps.interfaces.ClickListenerPlayList;
-import com.apps.interfaces.RecyclerClickListener;
 import com.apps.item.ItemPlayList;
-import com.apps.onlinemp3.R;
+import com.apps.nowmusicstream.R;
 import com.apps.utils.DBHelper;
 
 import java.util.ArrayList;

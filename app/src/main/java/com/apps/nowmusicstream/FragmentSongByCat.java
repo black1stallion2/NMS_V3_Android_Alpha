@@ -1,4 +1,4 @@
-package com.apps.onlinemp3;
+package com.apps.nowmusicstream;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,31 +27,29 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class FragmentSongByArtist extends Fragment {
+public class FragmentSongByCat extends Fragment {
 
     RecyclerView recyclerView;
     ArrayList<ItemSong> arrayList;
     public static AdapterSongList adapterSongList;
     ZProgressHUD progressHUD;
     LinearLayoutManager linearLayoutManager;
-    String artist_name = "", image = "";
+    String cid = "", cname = "";
     TextView textView_empty;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_song_by_cat, container, false);
 
-        textView_empty = rootView.findViewById(R.id.textView_empty_artist);
-        ImageView imageView = rootView.findViewById(R.id.imageView_back);
-        imageView.setVisibility(View.VISIBLE);
-
         progressHUD = ZProgressHUD.getInstance(getActivity());
         progressHUD.setMessage(getResources().getString(R.string.loading));
         progressHUD.setSpinnerType(ZProgressHUD.FADED_ROUND_SPINNER);
 
-        artist_name = getArguments().getString("artist");
-        image = getArguments().getString("image");
-        ((MainActivity) getActivity()).getSupportActionBar().setTitle(artist_name);
+        cid = getArguments().getString("cid");
+        cname = getArguments().getString("cname");
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(cname);
+
+        textView_empty = rootView.findViewById(R.id.textView_empty_artist);
 
         arrayList = new ArrayList<>();
         recyclerView = rootView.findViewById(R.id.recyclerView_songbycat);
@@ -62,7 +59,7 @@ public class FragmentSongByArtist extends Fragment {
         recyclerView.setHasFixedSize(true);
 
         if (JsonUtils.isNetworkAvailable(getActivity())) {
-            new LoadSongs().execute(Constant.URL_SONG_BY_ARTIST + artist_name.replace(" ", "%20"));
+            new LoadSongs().execute(Constant.URL_SONG_BY_CAT + cid);
         } else {
             Toast.makeText(getActivity(), getResources().getString(R.string.internet_not_conn), Toast.LENGTH_SHORT).show();
         }
@@ -85,7 +82,7 @@ public class FragmentSongByArtist extends Fragment {
 
                 JSONObject mainJson = new JSONObject(json);
                 JSONArray jsonArray = mainJson.getJSONArray(Constant.TAG_ROOT);
-                JSONObject objJson;
+                JSONObject objJson = null;
                 for (int i = 0; i < jsonArray.length(); i++) {
                     objJson = jsonArray.getJSONObject(i);
 
@@ -97,10 +94,10 @@ public class FragmentSongByArtist extends Fragment {
                     String url = objJson.getString(Constant.TAG_MP3_URL);
                     String desc = objJson.getString(Constant.TAG_DESC);
                     String duration = objJson.getString(Constant.TAG_DURATION);
-                    String thumb = objJson.getString(Constant.TAG_THUMB_B).replace(" ", "%20");
-                    String thumb_small = objJson.getString(Constant.TAG_THUMB_S).replace(" ", "%20");
                     String total_rate = objJson.getString(Constant.TAG_TOTAL_RATE);
                     String avg_rate = objJson.getString(Constant.TAG_AVG_RATE);
+                    String thumb = objJson.getString(Constant.TAG_THUMB_B).replace(" ", "%20");
+                    String thumb_small = objJson.getString(Constant.TAG_THUMB_B).replace(" ", "%20");
 
                     ItemSong objItem = new ItemSong(id, cid, cname, artist, url, thumb, thumb_small, name, duration, desc, total_rate, avg_rate);
                     arrayList.add(objItem);
@@ -133,6 +130,7 @@ public class FragmentSongByArtist extends Fragment {
                         }
                     }, "online");
                     recyclerView.setAdapter(adapterSongList);
+
                 } else {
                     progressHUD.dismissWithFailure(getResources().getString(R.string.error));
                     Toast.makeText(getActivity(), getResources().getString(R.string.server_no_conn), Toast.LENGTH_SHORT).show();
@@ -146,6 +144,17 @@ public class FragmentSongByArtist extends Fragment {
                 super.onPostExecute(s);
             }
         }
+    }
+
+    private int getPosition(String id) {
+        int count = 0;
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (id.equals(arrayList.get(i).getId())) {
+                count = i;
+                break;
+            }
+        }
+        return count;
     }
 
     private void showInter(final int pos) {
@@ -172,11 +181,11 @@ public class FragmentSongByArtist extends Fragment {
 
     private void playIntent(int position) {
         Constant.isOnline = true;
-        Constant.frag = "art";
+        Constant.frag = "cat";
         Constant.arrayList_play.clear();
         Constant.arrayList_play.addAll(arrayList);
-        Constant.playPos = position;
-        ((MainActivity) getActivity()).changeText(arrayList.get(position).getMp3Name(), arrayList.get(position).getCategoryName(), position + 1, arrayList.size(), arrayList.get(position).getDuration(), arrayList.get(position).getImageBig(), arrayList.get(position).getAverageRating(), "artist");
+        Constant.playPos = getPosition(adapterSongList.getID(position));
+        ((MainActivity) getActivity()).changeText(arrayList.get(position).getMp3Name(), arrayList.get(position).getCategoryName(), position + 1, arrayList.size(), arrayList.get(position).getDuration(), arrayList.get(position).getImageBig(), arrayList.get(position).getAverageRating(), "cat");
 
         Constant.context = getActivity();
         Intent intent = new Intent(getActivity(), PlayerService.class);

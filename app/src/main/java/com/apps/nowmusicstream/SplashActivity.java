@@ -1,27 +1,17 @@
-package com.apps.onlinemp3;
+package com.apps.nowmusicstream;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
 
-import com.apps.item.ItemAbout;
 import com.apps.utils.Constant;
 import com.apps.utils.JsonUtils;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class SplashActivity extends AppCompatActivity {
 

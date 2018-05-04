@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.apps.item.ItemSong;
-import com.apps.onlinemp3.R;
+import com.apps.nowmusicstream.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

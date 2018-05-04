@@ -2,20 +2,16 @@ package com.apps.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.apps.interfaces.ClickListenerPlayList;
 import com.apps.item.ItemPlayList;
-import com.apps.onlinemp3.R;
+import com.apps.nowmusicstream.R;
 import com.apps.utils.DBHelper;
 
 import java.util.ArrayList;

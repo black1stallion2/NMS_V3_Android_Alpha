@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.apps.interfaces.RecyclerClickListener;
-import com.apps.onlinemp3.R;
+import com.apps.nowmusicstream.R;
 import com.squareup.picasso.Picasso;
 
 public class AdapterNavigation extends RecyclerView.Adapter<AdapterNavigation.ViewHolder> {

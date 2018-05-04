@@ -12,8 +12,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
-import com.apps.onlinemp3.R;
-import com.apps.onlinemp3.SplashActivity;
+import com.apps.nowmusicstream.R;
+import com.apps.nowmusicstream.SplashActivity;
 import com.onesignal.NotificationExtenderService;
 import com.onesignal.OSNotificationReceivedResult;
 

@@ -1,10 +1,7 @@
 package com.apps.adapter;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,10 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.apps.interfaces.ClickListenerPlayList;
-import com.apps.interfaces.RecyclerClickListener;
-import com.apps.item.ItemPlayList;
 import com.apps.item.ItemSong;
-import com.apps.onlinemp3.R;
+import com.apps.nowmusicstream.R;
 import com.apps.utils.Constant;
 import com.apps.utils.DBHelper;
 import com.squareup.picasso.Picasso;

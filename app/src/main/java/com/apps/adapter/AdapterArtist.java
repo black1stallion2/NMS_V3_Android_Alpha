@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.apps.item.ItemArtist;
-import com.apps.onlinemp3.R;
+import com.apps.nowmusicstream.R;
 import com.apps.utils.Constant;
 import com.squareup.picasso.Picasso;
 

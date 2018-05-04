@@ -1,4 +1,4 @@
-package com.apps.onlinemp3;
+package com.apps.nowmusicstream;
 
 import android.content.Intent;
 import android.os.AsyncTask;
